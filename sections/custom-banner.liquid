@@ -1,0 +1,137 @@
+{{ 'custom-banner.css' | asset_url | stylesheet_tag }}
+
+{{ section.settings.main_image | 
+    image_url: width: 1400 | 
+    image_tag: width: 1400, widths: '200, 300, 400, 800, 1400', 
+    class: "main-banner--image", 
+    alt: "Banner Principal del Sitio" 
+}}
+
+<article class="banner-content {{ section.settings.vertical_align }} {{ section.settings.horizontal_align }}">
+    {% if section.settings.main_title != blank %}
+        <h1>{{ section.settings.main_title }}</h1>
+    {% endif %}
+    
+    {% if section.settings.main_subtitle != blank %}
+        <p>{{ section.settings.main_subtitle }}</p>
+    {% endif %}
+    <div class="banner-buttons-container">
+        {% if section.settings.link_text_1 != blank %}
+            <a href="{{ section.settings.link_text_1 }}">{{ section.settings.link_text_1 }}</a>
+        {% endif %}
+
+        {% if section.settings.link_text_2 != blank %}
+            <a href="{{ section.settings.link_text_2 }}">{{ section.settings.link_text_2 }}</a>
+        {% endif %}
+
+        {% if section.settings.link_text_3 != blank %}
+            <a href="{{ section.settings.link_text_3 }}">{{ section.settings.link_text_3 }}</a>
+        {% endif %}
+    </div>
+</article>
+
+{% schema %}
+{
+    "name": "Banner Principal",
+    "class": "main-banner-home",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "main_image",
+            "label": "Imagen principal"
+        },
+        {
+            "type": "text",
+            "id": "main_title",
+            "label": "Título del Banner"
+        },
+        {
+            "type": "textarea",
+            "id": "main_subtitle",
+            "label": "Subtítulo del Banner"
+        },
+        {
+            "type": "header",
+            "content": "Botones del Banner"
+        },
+        {
+            "type": "url",
+            "id": "link_url_1",
+            "label": "URL del botón 1"
+        },
+        {
+            "type": "text",
+            "id": "link_text_1",
+            "label": "Texto del botón 1"
+        },
+        {
+            "type": "url",
+            "id": "link_url_2",
+            "label": "URL del botón 2"
+        },
+        {
+            "type": "text",
+            "id": "link_text_2",
+            "label": "Texto del botón 2"
+        },
+        {
+            "type": "url",
+            "id": "link_url_3",
+            "label": "URL del botón 3"
+        },
+        {
+            "type": "text",
+            "id": "link_text_3",
+            "label": "Texto del botón 3"
+        },
+        {
+            "type": "header",
+            "content": "Posición del contenido"
+        },
+        {
+            "type": "select",
+            "id": "vertical_align",
+            "label": "Posición Vertical",
+            "options": [
+                {
+                    "value": "top",
+                    "label": "Arriba"
+                },
+                {
+                    "value": "middle",
+                    "label": "Medio"
+                },
+                {
+                    "value": "bottom",
+                    "label": "Abajo"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "horizontal_align",
+            "label": "Posición Horizontal",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Izquierda"
+                },
+                {
+                    "value": "center",
+                    "label": "Centro"
+                },
+                {
+                    "value": "right",
+                    "label": "Derecha"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banner Home"
+        }
+    ]
+}
+{% endschema %}

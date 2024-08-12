@@ -1,0 +1,25 @@
+.swiper-slide {
+    position: relative;
+    max-height: 400px;
+}
+
+.swiper-slide .slide-content {
+    position: absolute;
+    padding: 2rem;
+}
+
+.swiper-slide .slide-content a {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    background: #efefef;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+.swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+}

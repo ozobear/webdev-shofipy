@@ -1,0 +1,87 @@
+.main-banner-home {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.main-banner-home .main-banner--image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-banner-home .banner-content {
+    position: absolute;
+    width: 50%;
+    padding: 5rem;
+    color: black;
+}
+
+.main-banner-home .banner-content.top {
+    top: 0;
+}
+.main-banner-home .banner-content.middle {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-banner-home .banner-content.bottom {
+    bottom: 0;
+}
+.main-banner-home .banner-content.left {
+    left: 0;
+    right: auto;
+}
+.main-banner-home .banner-content.center {
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.main-banner-home .banner-content.right {
+    right: 0;
+    left: auto;
+}
+
+.main-banner-home .banner-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.main-banner-home .banner-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    line-height: 1.3;
+    background: black;
+    color: white;
+}
+
+.main-banner-home .banner-content .banner-buttons-container {
+    display: flex;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.main-banner-home .banner-content.right .banner-buttons-container {
+    justify-content: end;
+}
+.main-banner-home .banner-content.right .banner-buttons-container {
+    justify-content: center;
+}
+
+.main-banner-home .banner-content .banner-buttons-container a {
+    background: white;
+    color: black;
+    border: 3px solid black;
+    padding: 5px 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}

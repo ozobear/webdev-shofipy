@@ -1,0 +1,86 @@
+{{ 'section.custom-slider.css' | asset_url | stylesheet_tag }}
+
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+     {% for block in section.blocks %}
+        <div class="swiper-slide">
+            <article class="slide-content">
+                <h2>{{ block.settings.text_slide }}</h2>
+                <a href="{{ block.settings.link_slide }}">{{ block.settings.button_slide }}</a>
+            </article>
+            <img class="slide-banner" src="{{ block.settings.image_slide | image_url }}" alt="Slide Image">
+        </div>
+     {% endfor %}
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+
+{% schema %}
+{
+    "name": "Carrusel Slider",
+    "settings": [
+            {
+                "type": "text",
+                "id": "text_slider",
+                "label": "Nombre del Slider"
+            }
+        ],
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Slide",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text_slide",
+                    "label": "Título del Slider"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_slide",
+                    "label": "Selecciona una imagen"
+                },
+                {
+                    "type": "text",
+                    "id": "button_slide",
+                    "label": "Texto del botón",
+                    "default": "Ver más"
+                },
+                {
+                    "type": "url",
+                    "id": "link_slide",
+                    "label": "Enlace del botón"
+                }
+            ]
+
+        }
+    ]
+}
+{% endschema %}

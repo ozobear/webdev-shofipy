@@ -1,8 +1,30 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main-banner": {
-      "type": "custom-banner"
-    } 
+      "type": "custom-banner",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/PAC_New_Arrivals_August_FW_24_HP_MH_D_2340e1e3ce.gif",
+        "main_title": "Apokosi bien verga",
+        "main_subtitle": "Un banner bien picudo para que disque cales tus habilidades padre santo.",
+        "link_url_1": "shopify:\/\/collections\/automated-collection",
+        "link_text_1": "Holi",
+        "link_url_2": "shopify:\/\/collections\/frontpage",
+        "link_text_2": "Holi 2",
+        "link_url_3": "",
+        "link_text_3": "Holi 3",
+        "vertical_align": "bottom",
+        "horizontal_align": "left"
+      }
+    }
   },
   "order": [
     "main-banner"
